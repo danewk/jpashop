@@ -24,17 +24,17 @@ class MemberRepository2Test {
   @Transactional //같은 영속성 컨텍스트 안에 있다. id값이 같으면 같은 메모리를 사용한다.
   @Rollback(value = false)
   public void testMember() throws Exception{
-
-    Member member = new Member();
-    member.setUsername("memberA");
-
-    Long savedId = memberRepository2.save(member);
-
-    Member findMember = memberRepository2.find(savedId);
-
-    Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-    Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-    Assertions.assertThat(findMember).isEqualTo(member); //영속성 컨텍스트 내의 1차 캐시에 같은 값을 사용한다는 의미.
+//
+//    Member member = new Member();
+//    member.setUsername("memberA");
+//
+//    Long savedId = memberRepository2.save(member);
+//
+//    Member findMember = memberRepository2.find(savedId);
+//
+//    Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
+//    Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+//    Assertions.assertThat(findMember).isEqualTo(member); //영속성 컨텍스트 내의 1차 캐시에 같은 값을 사용한다는 의미.
 
   }
 
