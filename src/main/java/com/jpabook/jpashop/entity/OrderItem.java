@@ -1,6 +1,7 @@
 package com.jpabook.jpashop.entity;
 
 
+import com.jpabook.jpashop.entity.item.Item;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 
 @Entity
 @Getter
@@ -21,6 +21,8 @@ public class OrderItem {
   @Column(name = "order_item_id")
   private Long id;
 
+  @ManyToOne
+  @JoinColumn(name = "item_id")
   private Item item;
 
   @ManyToOne

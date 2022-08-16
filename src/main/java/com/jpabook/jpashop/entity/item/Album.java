@@ -1,11 +1,13 @@
 package com.jpabook.jpashop.entity.item;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
+@DiscriminatorValue("A")
 @Setter
 public class Album extends Item{
   private String artist;

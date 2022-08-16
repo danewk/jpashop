@@ -1,10 +1,12 @@
 package com.jpabook.jpashop.entity.item;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@DiscriminatorValue("B")
 @Getter
 @Setter
 public class Book extends Item {
