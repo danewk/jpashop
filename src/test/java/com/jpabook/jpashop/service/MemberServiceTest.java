@@ -1,6 +1,7 @@
 package com.jpabook.jpashop.service;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import com.jpabook.jpashop.entity.Member;
 import com.jpabook.jpashop.repository.MemberRepository2;
@@ -33,7 +34,7 @@ class MemberServiceTest {
   }
 
 
-  @Test
+  @org.junit.Test(expected = IllegalStateException.class)
   public void 중복_회원_예외() throws Exception {
 //Given
     Member member1 = new Member();
@@ -44,6 +45,6 @@ class MemberServiceTest {
     memberService.join(member1);
     memberService.join(member2); //예외가 발생해야 한다.
 
-
+    fail("예외 발생");
   }
 }
