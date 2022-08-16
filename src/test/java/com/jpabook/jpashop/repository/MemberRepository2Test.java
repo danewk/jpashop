@@ -1,10 +1,5 @@
 package com.jpabook.jpashop.repository;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import com.jpabook.jpashop.entity.Member;
-import org.assertj.core.api.Assertions;
-import org.junit.After;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +14,7 @@ class MemberRepository2Test {
 
   @Autowired
   MemberRepository2 memberRepository2;
+
 
   @Test
   @Transactional //같은 영속성 컨텍스트 안에 있다. id값이 같으면 같은 메모리를 사용한다.
