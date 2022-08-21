@@ -5,10 +5,12 @@ import com.jpabook.jpashop.entity.DeliveryStatus;
 import com.jpabook.jpashop.entity.Member;
 import com.jpabook.jpashop.entity.Order;
 import com.jpabook.jpashop.entity.OrderItem;
+import com.jpabook.jpashop.entity.OrderSearch;
 import com.jpabook.jpashop.entity.item.Item;
 import com.jpabook.jpashop.repository.ItemRepository;
 import com.jpabook.jpashop.repository.MemberRepository2;
 import com.jpabook.jpashop.repository.OrderRepository;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,6 +57,11 @@ public class OrderService {
     Order order = orderRepository.findOne(orderId);
     //주문 취소
     order.cancel();
+  }
+
+  //검색
+  public List<javax.persistence.criteria.Order> findOrders(OrderSearch orderSearch) {
+    return orderRepository.findAllByString(orderSearch);
   }
 
 }
