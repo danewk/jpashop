@@ -1,6 +1,5 @@
-package jpabook.jpashop.controller;
+package com.jpabook.jpashop.controller;
 
-import com.jpabook.jpashop.controller.BookForm;
 import com.jpabook.jpashop.entity.item.Book;
 import com.jpabook.jpashop.entity.item.Item;
 import com.jpabook.jpashop.service.ItemService;
